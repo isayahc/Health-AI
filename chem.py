@@ -33,7 +33,7 @@ from .download import download_file
 from .path import path_exists, get_lig_path, delete_path,lig_str
 from .url import lig_expo_url
 
-
+# downloads stv file based on 3 letter code: ligan -> any small molecule
 def download_lig(lig, lig_dir=None, check=True):
 
     lig_path = get_lig_path(lig, dir_path=lig_dir)
@@ -56,6 +56,7 @@ def load_lig(lig, lig_dir=None, tries=3):
     count = 0
     while try_load:
         try:
+            #stf loader
             mol = Chem.MolFromMolFile(lig_path)
             try_load = False
         except:
@@ -119,7 +120,7 @@ def get_lig_mol(lig, lig_dir=None, stereo=True, tries=3):
 
     return mol
 
-
+# takes in molecules
 def get_lig_simi(lig_1, lig_2, lig_dir=None):
 
     mol_1 = Chem.RDKFingerprint(get_lig_mol(lig_1, lig_dir=lig_dir))
@@ -144,7 +145,7 @@ def is_lig_match(lig, matches, lig_dir=None, return_total=False):
         else:
             return False
 
-
+# matching compound structures
 def get_lig_mcs(
     lig_lst,
     lig_dir=None,
@@ -185,7 +186,7 @@ def get_lig_mcs(
         ).smartsString
     )
 
-
+# query for existing drugs, one at a time
 def get_lig_query_match(lig, query, lig_dir=None):
 
     mol = get_lig_mol(lig, lig_dir=lig_dir)
