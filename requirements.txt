@@ -1,1 +1,9 @@
 streamlit==1.23.1
+pyyaml
+tensorflow
+numpy>=1.8.2
+scikit-learn
+h5py
+matplotlib
+tabulate
+tqdm
