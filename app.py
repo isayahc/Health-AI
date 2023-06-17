@@ -12,12 +12,12 @@ def main():
 
     st.title("Drug Research and Discovery")
 
-    compound = 0
-    weight = 0
-    toxicity = 0
-    #data: compound {weight = 0, toxicity = 0}
+    # compound = 0
+    # weight = 0
+    # toxicity = 0
+    # data: compound {weight = 0, toxicity = 0}
     st.subheader('Compound Name')
-    st.write(compound)
+    # st.write(compound)
 
 
 
@@ -40,3 +40,5 @@ def main():
     smiles_to_2d.generate_molecule_image(input_value, input_type)
 
 
+if __name__ == "__main__":
+    main()
