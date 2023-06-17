@@ -7,8 +7,15 @@ import streamlit as st
 import pandas as pd
 import smiles_to_2d
 
+st.title("Drug Research and Discovery")
 
-st.title("Toxicity of Test Compounds")
+compound = 0
+weight = 0
+toxicity = 0
+#data: compound {weight = 0, toxicity = 0}
+st.subheader('Compound Name')
+st.write(compound)
+
 
 
 
