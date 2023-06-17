@@ -39,7 +39,7 @@ def generate_molecule_image(input_value: Union[str, int], input_type: str) -> No
         st.write("Invalid input")
 
 
-if __name__ == "__main__":
+def main():
     # Get the input type from the user (SMILES or Molecular Formula)
     input_type = st.radio("Input Type", ("SMILES", "Molecular Formula"))
 
@@ -51,3 +51,7 @@ if __name__ == "__main__":
 
     # Generate and display the molecule image
     generate_molecule_image(input_value, input_type)
+
+
+if __name__ == "__main__":
+    main()
