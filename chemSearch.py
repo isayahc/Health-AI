@@ -1,2 +1,17 @@
+from rdkit import Chem
+from rdkit.Chem import Descriptors
+
 def chemSearch(input):
-    return "This chemical has these properties: Molecular weight: 180.042258736, Polar Surface Area: 63.60000000000001, LogP: 1.3101"
+    smiles = input
+    molecule = Chem.MolFromSmiles(smiles)
+
+    molecular_weight = Descriptors.ExactMolWt(molecule)
+    polar_surface_area = Descriptors.TPSA(molecule)
+    logP = Descriptors.MolLogP(molecule)
+
+    description = f"Molecular weight: {molecular_weight}\n"
+    description += f"Polar surface area: {polar_surface_area}\n"
+    description += f"logP: {logP}"
+
+    return description
+

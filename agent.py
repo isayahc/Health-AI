@@ -4,12 +4,18 @@ from langchain.agents import Tool
 from langchain.utilities import SerpAPIWrapper
 from langchain.memory import ConversationBufferMemory
 import chemSearch
+import chemName
 
 tools = [
     Tool(
         name="Chemical Search",
         func=chemSearch.chemSearch,
         description="Useful when you want information about a chemical"
+    ),
+    Tool(
+        name="Chemical Name",
+        func=chemName.chemName,
+        description="Useful when you want the name of a chemical"
     ),
 ]
 
